@@ -55,7 +55,7 @@ export default function QuestionCards({questions, sum, setSum, choices, setChoic
 
   return (
     <div className="w-full text-surface flex flex-col">
-        {questions.map((question, index)=>(
+        {questions?.map((question, index)=>(
             
 
             <div className="w-full border-b py-[10px] border-surface flex border-opacity-[40%]" key={index}>
@@ -68,12 +68,10 @@ export default function QuestionCards({questions, sum, setSum, choices, setChoic
                         <p>{question.description}</p>
                     </div>
                 </div>
-                <div className="w-[700px]  rounded-[8px] overflow-hidden shadow-[inset_0_0_0_1px] shadow-surface">
-                    {Object.values(question.scores).map((choice, i)=>(
-                        <div data-value={`${choice},${i}`} key={i} onClick={()=>{pushChoice(index,i)}} className={` ${isSelected(index, i) ? 'bg-surface text-white': ''} w-full p-[10px] cursor-pointer hover:bg-surface hover:bg-opacity-[50%] hover:text-white border-b border-surface border-opacity-[50%]`}>
+                <div className="w-[700px] rounded-[8px] overflow-hidden shadow-[inset_0_0_0_1px] shadow-surface">
+                    {Object?.values(question.scores).map((choice, i)=>(
+                        <div data-value={`${choice},${i}`} key={i} onClick={()=>{pushChoice(index,i)}} className={` ${isSelected(index, i) ? 'bg-surface text-white': ''} w-full p-[10px] cursor-pointer hover:bg-surface hover:bg-opacity-[50%] hover:text-white border-b border-surface border-opacity-[50%] transition-all ease-in-out`}>
                             {choice}
-                                
-                            
                         </div>                 
                     
                     ))}

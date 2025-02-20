@@ -33,7 +33,7 @@ export default function Footer() {
             </div>
 
             <div className="w-full flex justify-end">
-                <button className="py-[5px] px-[20px] border border-white rounded-[25px] flex items-center gap-[5px]">Back to top <IoIosArrowUp /></button>
+                <button onClick={()=>{window.scrollTo({top:0, behavior: "smooth"})}}className="py-[5px] px-[20px] border border-white rounded-[25px] flex items-center gap-[5px]">Back to top <IoIosArrowUp /></button>
             </div>
 
         </div>
