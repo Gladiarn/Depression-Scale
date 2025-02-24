@@ -1,12 +1,12 @@
 
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
-import NextAuth from "next-auth";
+import NextAuth, { AuthOptions } from "next-auth";
 import { connectDatabase } from "@/lib/mongodb";
 import Users from "@/models/Users";
 import bcrypt from "bcryptjs"
 
-export default NextAuth({
+export const authOptions:AuthOptions = ({
     providers: [
         CredentialsProvider({
             name: "Credentials",
@@ -96,3 +96,6 @@ export default NextAuth({
     },
     debug: true,
 })
+
+
+export default NextAuth(authOptions);

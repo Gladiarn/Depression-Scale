@@ -114,7 +114,7 @@ export default function Form() {
         credentials: "include",
       });
 
-      if (res.status === 200) {
+      if (res.ok) {
         clearForm();
         setMessage("Successfully inserted a new user.");
         setSuccess(true);
@@ -146,7 +146,7 @@ export default function Form() {
       initial={"initial"}
       animate={"animate"}
       transition={{ type: "spring", duration: 0.5 }}
-      className="w-[550px] p-[30px]"
+      className="w-[550px] p-[15px]"
     >
       {/* LogIn */}
       <div
@@ -248,7 +248,9 @@ export default function Form() {
           </div>
 
           {message && (
-            <div className="flex w-full gap-[5px] items-center text-surface justify-center">
+            <div className={`flex w-full gap-[5px] items-center ${
+              success ? "text-success" : "text-error"
+            } justify-center` }>
               <IoIosWarning />
               <p className="text-[12px]">{message}</p>
             </div>
@@ -399,7 +401,7 @@ export default function Form() {
               className="pr-[40px] focus:outline-none valid:border valid:border-surface peer w-full p-[10px] border border-surface text-surface rounded-[7px]"
             />
             <span className="pointer-events-none transition-all ease-in-out peer-focus:outline-surface absolute left-2 top-[50%] translate-y-[-50%] text-surface text-opacity-[30%] peer-focus:top-0 peer-valid:top-0 peer-focus:bg-white peer-valid:bg-white peer-focus:left-5 peer-valid:left-5 peer-focus:px-[5px] peer-valid:px-[5px] peer-focus:text-surface peer-valid:text-surface">
-              Password
+              Confirm Password
             </span>
 
             {showingPassword2 == true ? (

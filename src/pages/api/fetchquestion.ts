@@ -8,10 +8,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
   
   try {
-    await connectDatabase(); // Connect to MongoDB
-    const questions = await Questions.find({}); // Fetch all documents
+    await connectDatabase();
+    const questions = await Questions.find({});
 
     return res.status(200).json(questions);
+    
   } catch (error) {
     console.error("Database Error:", error);
     return res.status(500).json({ error: "Failed to fetch data" });
