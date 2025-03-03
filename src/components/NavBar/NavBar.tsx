@@ -27,7 +27,6 @@ export default function NavBar({setShowWhat, showWhat}: NavbarType) {
                 <FaHandsHelping />
                 <p>DepHelp</p>
             </div>
-            
 
             <ul className="flex items-center gap-[20px] ">
                 <li className={`relative before:transition-all before:ease-in-out ease-in-out hover:before:w-full before:content-[""] before:w-0 before:h-[2px] before:bg-white before:absolute before:bottom-[-3px] before:left-0`}>

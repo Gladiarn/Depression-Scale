@@ -25,8 +25,10 @@ export const authOptions:AuthOptions = ({
                 const match = await bcrypt.compare(credentials?.Password || "", user.Password)
 
                 if(!match){
-                    throw new Error("Incorrect password");
+                    throw new Error("Incorrect Password");
                 }
+
+                
 
                 return {
                     id: user._id,
